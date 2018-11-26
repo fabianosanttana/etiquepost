@@ -11,6 +11,6 @@ loginApi(app, firebase);
 usuarioApi(app, firebase);
 ticketsApi(app,firebase);
 
-app.listen(port, () => {
-    console.log("Servidor rodando na porta 8000")
+app.listen(port, '0.0.0.0', () => {
+    console.log("Servidor rodando na porta" + port)
 })
