@@ -12,5 +12,4 @@ usuarioApi(app, firebase);
 ticketsApi(app,firebase);
 
 app.listen( process.env.port ,"0.0.0.0", () => {
-    console.log("Servidor rodando na porta")
 })
