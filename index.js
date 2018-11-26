@@ -11,5 +11,5 @@ loginApi(app, firebase);
 usuarioApi(app, firebase);
 ticketsApi(app,firebase);
 
-app.listen( process.env.port ,"0.0.0.0", () => {
+app.listen(process.env.PORT, "0.0.0.0", () => {
 })
