@@ -1,0 +1,26 @@
+{
+  "name": "etiquepost-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Daniel Faria Rocha",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "1.17.2",
+    "consign": "^0.1.6",
+    "express": "^4.0.0",
+    "express-validator": "^5.0.1",
+    "firebase": "^4.10.0",
+    "firebase-admin": "^5.13.1",
+    "lodash": "^4.17.5",
+    "object-values": "^1.0.0",
+    "object.values": "^1.0.4",
+    "request": "^2.74.0",
+    "uuidv4": "^2.0.0"
+  }
+}
