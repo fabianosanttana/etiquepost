@@ -9,6 +9,11 @@ module.exports = (app, firebase) => {
         })
     });
 
+    app.get('/food', (req, res) => {
+        firebase.database().ref(`receitas/`).once('value').then(response => {
+            response.val() ? res.status(200).send(response) : res.status(400).send({ erro: true, message: "Não existe receita disponível." })
+        })
+    });
 
     /**
      * Cadastra um novo usuário
