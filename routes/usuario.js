@@ -1,5 +1,5 @@
 var uuidv = require('uuidv4');
-
+var _ = require('lodash')
 module.exports = (app, firebase) => {
 
     //retorna todos usuarios e suas informações
@@ -10,8 +10,13 @@ module.exports = (app, firebase) => {
     });
 
     app.get('/food', (req, res) => {
-        firebase.database().ref(`/receitas`).once('value').then(response => {
-            response.val() ? res.status(200).send(response) : res.status(400).send({ erro: true, message: "Não existe receita disponível." })
+        firebase.database().ref(`/receitas/listagem`).once('value').then(response => {
+            if(response.val()){
+                let result = _.toArray(response)
+                res.status(200).send(result)
+            }else{
+                res.status(400).send({ erro: true, message: "Não existe receita disponível." })
+            }
         })
     });
 
