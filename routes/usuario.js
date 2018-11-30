@@ -20,6 +20,17 @@ module.exports = (app, firebase) => {
         })
     });
 
+    app.post('/users/recover', (req, res) => {
+        let body = req.body;
+        console.log(body.email);
+        firebase.auth().sendPasswordResetEmail(body.email)
+        .then((obj) => 
+        {
+            response = { error: 'false', message: 'Email enviando com sucesso.' }
+            res.status(201).send(response);
+        })
+    });
+
     /**
      * Cadastra um novo usuário
      * {"nome":"NOME", "email":"EMAIL",	"password":"PASSWORD"} 
